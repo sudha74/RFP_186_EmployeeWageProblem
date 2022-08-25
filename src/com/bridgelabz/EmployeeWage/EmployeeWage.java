@@ -9,17 +9,21 @@ public class EmployeeWage {
 
     public static void main(String[] args) {
         System.out.println("Welcome to Employee Wage");
-        int attendance = (int) (Math.floor(Math.random() * 10)) % 2;
-        if (attendance == IS_PRESENT) {
-            System.out.println("Employee is Working Full Time");
-            int dailyWage = WAGE_PER_HOUR * FULL_DAY_HOUR;
-            System.out.println("Employee dailyWage is : " + dailyWage);
-        } else if (attendance == IS_PART_TIME) {
-            System.out.println("Employee is Working Part Time");
-            int dailyWage = WAGE_PER_HOUR * FULL_DAY_HOUR;
-            System.out.println("Employee dailyWage is : " + dailyWage);
-        } else {
-            System.out.println("Employee is absent");
+        int attendance = (int) (Math.floor(Math.random() * 10)) % 3;
+        switch (attendance) {
+            case IS_PRESENT:
+                System.out.println("Employee is Working Full Time");
+                int dailyWage = WAGE_PER_HOUR * FULL_DAY_HOUR;
+                System.out.println("Employee dailyWage is : " + dailyWage);
+                break;
+            case IS_PART_TIME:
+                System.out.println("Employee is Working Part Time");
+                dailyWage = WAGE_PER_HOUR * FULL_DAY_HOUR;
+                System.out.println("Employee dailyWage is : " + dailyWage);
+                break;
+            default:
+                System.out.println("Employee is absent");
+                break;
         }
     }
 }
